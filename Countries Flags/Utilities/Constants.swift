@@ -22,3 +22,4 @@ let HOME_VC = "countryVC"
 //Completion Handler
 
 typealias firebaseHandler = (_ status:Bool ,_ error:Error?)->()
+typealias countryHandler = (_ status:Bool)->()
