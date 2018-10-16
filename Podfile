@@ -7,6 +7,7 @@ target 'Countries Flags' do
 
   # Pods for Countries Flags
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
   pod 'Alamofire', '~> 4.7'
   pod 'Kingfisher'
   pod 'TransitionButton'

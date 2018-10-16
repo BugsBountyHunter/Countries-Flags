@@ -18,3 +18,7 @@ let API_URL = "https://restcountries.eu/rest/v2/all"
 let LOGIN_VC = "loginVC"
 let CREATE_ACCOUNT_VC = "createAccountVC"
 let HOME_VC = "countryVC"
+
+//Completion Handler
+
+typealias firebaseHandler = (_ status:Bool ,_ error:Error?)->()
