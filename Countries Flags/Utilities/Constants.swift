@@ -9,10 +9,12 @@
 import Foundation
 
 //URLS
-
-
+let API_URL = "https://restcountries.eu/rest/v2/all"
 
 //Cell Identifire
+ let COUNTRY_CELL = "countriesCell"
 
-
-//Segue Identifire
+// VC Identifire
+let LOGIN_VC = "loginVC"
+let CREATE_ACCOUNT_VC = "createAccountVC"
+let HOME_VC = "countryVC"
