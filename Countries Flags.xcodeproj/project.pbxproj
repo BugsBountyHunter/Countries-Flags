@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AA65F3963850C1388F6B97D /* Pods_Countries_Flags.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D556353FBBEBDCE35A646D6A /* Pods_Countries_Flags.framework */; };
+		E29D069C21767F9200313566 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E29D069B21767F9100313566 /* GoogleService-Info.plist */; };
 		E2F4AF91217663EE00CAC5ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F4AF90217663EE00CAC5ED /* AppDelegate.swift */; };
 		E2F4AF93217663EE00CAC5ED /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F4AF92217663EE00CAC5ED /* LoginVC.swift */; };
 		E2F4AF96217663EE00CAC5ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F4AF94217663EE00CAC5ED /* Main.storyboard */; };
@@ -18,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		241A9F89623945E19E80B1D9 /* Pods-Countries Flags.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries Flags.release.xcconfig"; path = "Pods/Target Support Files/Pods-Countries Flags/Pods-Countries Flags.release.xcconfig"; sourceTree = "<group>"; };
+		59394C1AFC36112166032DF9 /* Pods-Countries Flags.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries Flags.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Countries Flags/Pods-Countries Flags.debug.xcconfig"; sourceTree = "<group>"; };
+		D556353FBBEBDCE35A646D6A /* Pods_Countries_Flags.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Countries_Flags.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E29D069B21767F9100313566 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2F4AF8D217663EE00CAC5ED /* Countries Flags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Countries Flags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F4AF90217663EE00CAC5ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2F4AF92217663EE00CAC5ED /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -35,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA65F3963850C1388F6B97D /* Pods_Countries_Flags.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2772DAFFADB98AC7C3EA65D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D556353FBBEBDCE35A646D6A /* Pods_Countries_Flags.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		98EE3BC67826E273FF3B2BA0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59394C1AFC36112166032DF9 /* Pods-Countries Flags.debug.xcconfig */,
+				241A9F89623945E19E80B1D9 /* Pods-Countries Flags.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E2F4AF84217663EE00CAC5ED = {
 			isa = PBXGroup;
 			children = (
 				E2F4AF8F217663EE00CAC5ED /* Countries Flags */,
 				E2F4AF8E217663EE00CAC5ED /* Products */,
+				98EE3BC67826E273FF3B2BA0 /* Pods */,
+				2772DAFFADB98AC7C3EA65D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +95,7 @@
 				E2F4AF97217663F900CAC5ED /* Assets.xcassets */,
 				E2F4AF99217663F900CAC5ED /* LaunchScreen.storyboard */,
 				E2F4AF9C217663F900CAC5ED /* Info.plist */,
+				E29D069B21767F9100313566 /* GoogleService-Info.plist */,
 			);
 			path = "Countries Flags";
 			sourceTree = "<group>";
@@ -120,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2F4AF9F217663F900CAC5ED /* Build configuration list for PBXNativeTarget "Countries Flags" */;
 			buildPhases = (
+				1355E6FF24BD801403902E20 /* [CP] Check Pods Manifest.lock */,
 				E2F4AF89217663EE00CAC5ED /* Sources */,
 				E2F4AF8A217663EE00CAC5ED /* Frameworks */,
 				E2F4AF8B217663EE00CAC5ED /* Resources */,
+				A4E217260A84170EB25F550B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,12 +201,68 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2F4AF9B217663F900CAC5ED /* LaunchScreen.storyboard in Resources */,
+				E29D069C21767F9200313566 /* GoogleService-Info.plist in Resources */,
 				E2F4AF98217663F900CAC5ED /* Assets.xcassets in Resources */,
 				E2F4AF96217663EE00CAC5ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1355E6FF24BD801403902E20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Countries Flags-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4E217260A84170EB25F550B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Countries Flags/Pods-Countries Flags-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Countries Flags/Pods-Countries Flags-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E2F4AF89217663EE00CAC5ED /* Sources */ = {
@@ -332,6 +417,7 @@
 		};
 		E2F4AFA0217663F900CAC5ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59394C1AFC36112166032DF9 /* Pods-Countries Flags.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -350,6 +436,7 @@
 		};
 		E2F4AFA1217663F900CAC5ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 241A9F89623945E19E80B1D9 /* Pods-Countries Flags.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
