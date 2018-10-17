@@ -17,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        // if user login go to dirction home VC
+        if (Auth.auth().currentUser != nil){
+            
+        let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let homeVC = sb.instantiateViewController(withIdentifier: HOME_VC)
+        window?.makeKeyAndVisible()
+        window?.rootViewController?.present(homeVC, animated: true, completion: nil)
+            
+        }
         return true
     }
 

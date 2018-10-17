@@ -19,4 +19,12 @@ extension UIViewController{
         self.present(alert, animated: true, completion: nil)
         
     }
+    func logoutAlert(title:String , message:String , okTitle:String? , completion:alertHandler?){
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: okTitle, style: .destructive, handler: completion))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }
