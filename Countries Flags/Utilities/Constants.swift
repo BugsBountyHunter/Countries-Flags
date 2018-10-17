@@ -6,7 +6,7 @@
 //  Copyright © 2018 AHMED SR. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //URLS
 let API_URL = "https://restcountries.eu/rest/v2/all"
@@ -23,3 +23,4 @@ let HOME_VC = "countryVC"
 
 typealias firebaseHandler = (_ status:Bool ,_ error:Error?)->()
 typealias countryHandler = (_ status:Bool)->()
+typealias alertHandler  = (_ okHandler:UIAlertAction)->()

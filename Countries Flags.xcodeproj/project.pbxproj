@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3AA65F3963850C1388F6B97D /* Pods_Countries_Flags.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D556353FBBEBDCE35A646D6A /* Pods_Countries_Flags.framework */; };
+		E23CB1A121775027008909E2 /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CB1A021775027008909E2 /* MessageAlert.swift */; };
 		E29D069C21767F9200313566 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E29D069B21767F9100313566 /* GoogleService-Info.plist */; };
 		E29D06A3217684E400313566 /* CountriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D069D217684DB00313566 /* CountriesCell.swift */; };
 		E29D06A4217684E400313566 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D069E217684DF00313566 /* GradientView.swift */; };
@@ -32,6 +33,7 @@
 		241A9F89623945E19E80B1D9 /* Pods-Countries Flags.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries Flags.release.xcconfig"; path = "Pods/Target Support Files/Pods-Countries Flags/Pods-Countries Flags.release.xcconfig"; sourceTree = "<group>"; };
 		59394C1AFC36112166032DF9 /* Pods-Countries Flags.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries Flags.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Countries Flags/Pods-Countries Flags.debug.xcconfig"; sourceTree = "<group>"; };
 		D556353FBBEBDCE35A646D6A /* Pods_Countries_Flags.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Countries_Flags.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23CB1A021775027008909E2 /* MessageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlert.swift; sourceTree = "<group>"; };
 		E29D069B21767F9100313566 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E29D069D217684DB00313566 /* CountriesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesCell.swift; sourceTree = "<group>"; };
 		E29D069E217684DF00313566 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E23CB19F21774FF7008909E2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E23CB1A021775027008909E2 /* MessageAlert.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		E2F4AF84217663EE00CAC5ED = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 		E2F4AF8F217663EE00CAC5ED /* Countries Flags */ = {
 			isa = PBXGroup;
 			children = (
+				E23CB19F21774FF7008909E2 /* Extension */,
 				E2F4AFA62176651900CAC5ED /* Utilities */,
 				E2F4AFA5217664DF00CAC5ED /* Services */,
 				E2F4AFA4217664D700CAC5ED /* Controller */,
@@ -301,6 +312,7 @@
 				E2F4AF93217663EE00CAC5ED /* LoginVC.swift in Sources */,
 				E29D06AE2176884B00313566 /* HomeVC.swift in Sources */,
 				E29D06AC217687C600313566 /* CreateAccountVC.swift in Sources */,
+				E23CB1A121775027008909E2 /* MessageAlert.swift in Sources */,
 				E29D06A7217684E400313566 /* RaundedButton.swift in Sources */,
 				E2F4AF91217663EE00CAC5ED /* AppDelegate.swift in Sources */,
 				E29D06A3217684E400313566 /* CountriesCell.swift in Sources */,
