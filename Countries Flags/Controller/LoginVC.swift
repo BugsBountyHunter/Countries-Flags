@@ -22,6 +22,7 @@ class LoginVC: UIViewController {
       
     }
     //Function
+    
     //Action
     @IBAction func loginBtnWasPressed(_ sender: Any) {
         loginBtn.startAnimation()
@@ -32,11 +33,12 @@ class LoginVC: UIViewController {
             AuthService.instanc.loginUser(withEmail: email, andPassword: pass) { (status, error) in
                 if status {
                     guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: HOME_VC) as? HomeVC else{return}
-                    self.loginBtn.stopAnimation(animationStyle: .expand, revertAfterDelay: 0.5, completion: nil)
+                    self.loginBtn.stopAnimation(animationStyle: .expand, revertAfterDelay: 1.0, completion: nil)
                     self.present(homeVC, animated: true, completion: nil)
                 }else{
                     self.loginBtn.stopAnimation(animationStyle: .shake, revertAfterDelay: 0.1, completion: nil)
                     self.showAlert(title: "Login Error Message", message:  (error?.localizedDescription)!, okTitle: "ok", completion: nil)
+                    
                 }//if
             }
         }else{
@@ -47,10 +49,11 @@ class LoginVC: UIViewController {
                   self.showAlert(title: "Login Error Message", message: "Please write correct password ", okTitle: "ok", completion: nil)
                 self.loginBtn.stopAnimation(animationStyle: .shake, revertAfterDelay: 0.1, completion: nil)
             }
-        }
+        }//if 
         
     }
     @IBAction func signInBtnWasPressed(_ sender: Any) {
+        //go to create new account page
         guard let createAccountVC = storyboard?.instantiateViewController(withIdentifier: CREATE_ACCOUNT_VC) as? CreateAccountVC else {
             return
         }

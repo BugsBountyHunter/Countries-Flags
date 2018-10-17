@@ -17,7 +17,7 @@ let API_URL = "https://restcountries.eu/rest/v2/all"
 // VC Identifire
 let LOGIN_VC = "loginVC"
 let CREATE_ACCOUNT_VC = "createAccountVC"
-let HOME_VC = "countryVC"
+let HOME_VC = "homeVC"
 
 //Completion Handler
 
