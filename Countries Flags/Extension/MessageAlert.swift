@@ -24,6 +24,7 @@ extension UIViewController{
         let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: okTitle, style: .destructive, handler: completion))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil ))
         
         self.present(alert, animated: true, completion: nil)
     }

@@ -19,10 +19,15 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        //Add Gusture to view
+        let tapGusture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGusture)
     }
     //Function
-    
+    @objc func dismissKeyboard(){
+        emailTxtfield.endEditing(true)
+        passwordTxtfield.endEditing(true)
+    }
     //Action
     @IBAction func loginBtnWasPressed(_ sender: Any) {
         loginBtn.startAnimation()

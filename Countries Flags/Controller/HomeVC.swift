@@ -11,6 +11,7 @@ import Firebase
 class HomeVC: UIViewController {
     //Outlets
     @IBOutlet weak var tabelView: UITableView!
+    @IBOutlet weak var userLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,7 @@ class HomeVC: UIViewController {
         tabelView.dataSource = self
         tabelView.delegate = self
         
+        //when get al data from Api just viewDidLoad Runing
         DataService.instanc.getCcountriesData(withApiurl: API_URL) { (status, error) in
             if status{
                 self.tabelView.reloadData()
@@ -25,8 +27,9 @@ class HomeVC: UIViewController {
                 self.showAlert(title: "Error", message: "\(String(describing: error?.localizedDescription))", okTitle: "ok", completion: nil)
             }
         }
-    }
+        userLbl.text = "Welcome \((Auth.auth().currentUser?.email)!)" 
     
+    }
     
     //Action
     @IBAction func logoutBtnWasPressed(_ sender: Any) {

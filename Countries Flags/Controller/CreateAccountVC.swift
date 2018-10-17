@@ -19,10 +19,16 @@ class CreateAccountVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //Add Gusture to view
+        let tapGusture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGusture)
     }
     //function
-    
+    @objc func dismissKeyboard(){
+        emailTxtfield.endEditing(true)
+        passwordTxtfield.endEditing(true)
+        confirmPassTxtfield.endEditing(true)
+    }
     //Acrion
     @IBAction func createAccountBtnWasPressed(_ sender: Any) {
          createAccountBtn.startAnimation()
