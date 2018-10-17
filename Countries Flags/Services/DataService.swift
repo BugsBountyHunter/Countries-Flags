@@ -39,6 +39,7 @@ class DataService {
                     let newCountry = Country.init(countryName: countryName, capitalName: capitalName, timeZone: timeZone, imageUrl: flagUrl)
                     self.countryArray.append(newCountry)
                 }//loop
+                print(self.countryArray)
                 completion(true,nil)
             }//if
         }//closure

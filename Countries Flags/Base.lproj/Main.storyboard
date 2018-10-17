@@ -403,6 +403,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Zone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlJ-X6-aM0">
                                                     <rect key="frame" x="292" y="40.333333333333336" width="68" height="19.333333333333336"/>
@@ -419,6 +420,7 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="HlJ-X6-aM0" firstAttribute="centerY" secondItem="25T-oP-Gll" secondAttribute="centerY" id="9v4-2i-7X9"/>
                                                 <constraint firstItem="fKI-yU-bSD" firstAttribute="leading" secondItem="sNF-yb-zoe" secondAttribute="trailing" constant="12" id="A3v-ra-Dy2"/>

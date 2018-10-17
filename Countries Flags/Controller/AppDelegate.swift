@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
         let homeVC = sb.instantiateViewController(withIdentifier: HOME_VC)
         window?.makeKeyAndVisible()
-        window?.rootViewController?.present(homeVC, animated: true, completion: nil)
+        // solve (Unbalanced calls to begin/end appearance transitions ) animated : false 
+        window?.rootViewController?.present(homeVC, animated: false, completion: nil)
             
         }
         return true

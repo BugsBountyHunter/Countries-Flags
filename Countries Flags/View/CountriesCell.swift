@@ -15,18 +15,7 @@ class CountriesCell: UITableViewCell {
     @IBOutlet weak var capitalLbl: UILabel!
     @IBOutlet weak var timeZone: UILabel!
     @IBOutlet weak var flagImage: UIImageView!
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
     func configureCell(country:Country , indexPath:IndexPath){
         countryNameLbl.text = country.countryName
         capitalLbl.text = country.capitalName
