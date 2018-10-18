@@ -25,9 +25,10 @@ class CreateAccountVC: UIViewController {
     }
     //function
     @objc func dismissKeyboard(){
-        emailTxtfield.endEditing(true)
-        passwordTxtfield.endEditing(true)
-        confirmPassTxtfield.endEditing(true)
+//        emailTxtfield.endEditing(true)
+//        passwordTxtfield.endEditing(true)
+//        confirmPassTxtfield.endEditing(true)
+    view.endEditing(true)
     }
     //Acrion
     @IBAction func createAccountBtnWasPressed(_ sender: Any) {

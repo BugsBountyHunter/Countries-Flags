@@ -25,8 +25,9 @@ class LoginVC: UIViewController {
     }
     //Function
     @objc func dismissKeyboard(){
-        emailTxtfield.endEditing(true)
-        passwordTxtfield.endEditing(true)
+//        emailTxtfield.endEditing(true)
+//        passwordTxtfield.endEditing(true)
+        view.endEditing(true)
     }
     //Action
     @IBAction func loginBtnWasPressed(_ sender: Any) {
