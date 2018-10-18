@@ -11,4 +11,6 @@ target 'Countries Flags' do
   pod 'Alamofire', '~> 4.7'
   pod 'Kingfisher'
   pod 'TransitionButton'
+  pod 'Gloss', '~> 2.0'
+  
 end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vcp-fM-E5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hpF-AD-XTD">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,7 +41,7 @@
                                         <color key="value" red="0.094117647060000004" green="0.24026182090000001" blue="0.4762542126" alpha="0.84011130140000001" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="buttomColor">
-                                        <color key="value" red="0.094117647060000004" green="0.24313725489999999" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.043137254899999998" green="0.054901960780000002" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -105,7 +105,7 @@
                                                     <color key="titleColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="signInBtnWasPressed:" destination="Vcp-fM-E5E" eventType="touchUpInside" id="CFW-ud-Q9N"/>
+                                                    <action selector="signUpBtnWasPressed:" destination="Vcp-fM-E5E" eventType="touchUpInside" id="CFW-ud-Q9N"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -163,15 +163,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eqz-d0-qCz"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5Od-ex-Hwb"/>
                     <connections>
                         <outlet property="emailTxtfield" destination="hgV-5L-l2p" id="6K5-o1-DA9"/>
                         <outlet property="loginBtn" destination="ttg-HN-T1S" id="tyv-Ow-ayD"/>
                         <outlet property="passwordTxtfield" destination="4dt-Qg-Lhk" id="Li0-ek-kLS"/>
+                        <segue destination="UDQ-cT-Pxc" kind="show" identifier="toCreateAccountVC" id="FVm-kh-s1o"/>
+                        <segue destination="bhD-k4-968" kind="show" identifier="logintoHomeVC" id="7b3-G6-Dwl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="myL-Z0-Xog" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-44" y="-242"/>
+            <point key="canvasLocation" x="823" y="-242"/>
         </scene>
         <!--Create AccountVC-->
         <scene sceneID="dqg-X0-Esy">
@@ -212,10 +215,10 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="topColor">
-                                        <color key="value" red="0.094117647060000004" green="0.24313725489999999" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.094117647060000004" green="0.24026182090000001" blue="0.4762542126" alpha="0.84011130140000001" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="buttomColor">
-                                        <color key="value" red="0.094117647060000004" green="0.24026182090000001" blue="0.4762542126" alpha="0.84011130140000001" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.043137254899999998" green="0.054901960780000002" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -327,11 +330,13 @@
                         <outlet property="createAccountBtn" destination="fM9-6R-mzC" id="NCi-ac-ZWQ"/>
                         <outlet property="emailTxtfield" destination="qad-Wi-GoP" id="rQN-Dv-LJE"/>
                         <outlet property="passwordTxtfield" destination="O1D-Hz-Agg" id="nHE-oX-jSB"/>
+                        <segue destination="bhD-k4-968" kind="show" identifier="toHomeVC" id="e6I-gT-f0t"/>
+                        <segue destination="Vcp-fM-E5E" kind="presentation" identifier="backToLogin" id="zgK-ZX-KCY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFL-sw-LSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="660" y="-242"/>
+            <point key="canvasLocation" x="822" y="556"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="PlO-Y3-xyJ">
@@ -372,11 +377,11 @@
                                         <color key="value" red="0.094117647060000004" green="0.24026182090000001" blue="0.4762542126" alpha="0.84011130140000001" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="buttomColor">
-                                        <color key="value" red="0.094117647060000004" green="0.24313725489999999" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.043137254899999998" green="0.054901960780000002" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="45T-pR-hkf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="45T-pR-hkf">
                                 <rect key="frame" x="0.0" y="70" width="375" height="742"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -388,9 +393,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="fKI-yU-bSD" userLabel="Country View">
-                                                    <rect key="frame" x="107" y="28" width="177" height="44"/>
+                                                    <rect key="frame" x="107.00000000000001" y="28" width="186.33333333333337" height="44"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="PUN-AR-2s1">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="PUN-AR-2s1">
                                                             <rect key="frame" x="0.0" y="0.0" width="120.66666666666667" height="24.666666666666668"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -405,12 +410,6 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Zone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlJ-X6-aM0">
-                                                    <rect key="frame" x="292" y="40.333333333333336" width="68" height="19.333333333333336"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startup" translatesAutoresizingMaskIntoConstraints="NO" id="sNF-yb-zoe" customClass="CircleImage" customModule="Countries_Flags" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="9" width="80" height="80"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -419,16 +418,33 @@
                                                         <constraint firstAttribute="width" constant="80" id="5uZ-HJ-5Jn"/>
                                                     </constraints>
                                                 </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iFB-uu-4hu">
+                                                    <rect key="frame" x="301.33333333333331" y="28.333333333333332" width="58.666666666666686" height="43.333333333333343"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Region" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="O7K-jE-qFg">
+                                                            <rect key="frame" x="0.0" y="0.0" width="58.666666666666664" height="24.666666666666668"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Zone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="HlJ-X6-aM0">
+                                                            <rect key="frame" x="0.0" y="29.666666666666668" width="58.666666666666664" height="13.666666666666668"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="HlJ-X6-aM0" firstAttribute="centerY" secondItem="25T-oP-Gll" secondAttribute="centerY" id="9v4-2i-7X9"/>
+                                                <constraint firstAttribute="trailing" secondItem="iFB-uu-4hu" secondAttribute="trailing" constant="15" id="0KF-vH-Wa1"/>
+                                                <constraint firstItem="iFB-uu-4hu" firstAttribute="leading" secondItem="fKI-yU-bSD" secondAttribute="trailing" constant="8" id="4TV-oE-uTL"/>
                                                 <constraint firstItem="fKI-yU-bSD" firstAttribute="leading" secondItem="sNF-yb-zoe" secondAttribute="trailing" constant="12" id="A3v-ra-Dy2"/>
                                                 <constraint firstItem="sNF-yb-zoe" firstAttribute="leading" secondItem="25T-oP-Gll" secondAttribute="leading" constant="15" id="GmM-4G-cEu"/>
+                                                <constraint firstItem="iFB-uu-4hu" firstAttribute="centerY" secondItem="25T-oP-Gll" secondAttribute="centerY" id="J6u-UM-PRe"/>
                                                 <constraint firstItem="sNF-yb-zoe" firstAttribute="top" secondItem="25T-oP-Gll" secondAttribute="top" constant="9" id="Q8z-QA-Ue9"/>
                                                 <constraint firstItem="fKI-yU-bSD" firstAttribute="centerY" secondItem="25T-oP-Gll" secondAttribute="centerY" id="g0R-oT-cDm"/>
-                                                <constraint firstItem="HlJ-X6-aM0" firstAttribute="trailing" secondItem="25T-oP-Gll" secondAttribute="trailingMargin" id="g7I-Y1-0Ek"/>
-                                                <constraint firstItem="HlJ-X6-aM0" firstAttribute="leading" secondItem="fKI-yU-bSD" secondAttribute="trailing" constant="8" id="oNd-5K-xPb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -436,6 +452,7 @@
                                             <outlet property="capitalLbl" destination="q47-xq-Gam" id="V2V-92-cWm"/>
                                             <outlet property="countryNameLbl" destination="PUN-AR-2s1" id="JuT-JX-O0S"/>
                                             <outlet property="flagImage" destination="sNF-yb-zoe" id="TVe-YP-jMS"/>
+                                            <outlet property="regionName" destination="O7K-jE-qFg" id="5hb-pS-6cv"/>
                                             <outlet property="timeZone" destination="HlJ-X6-aM0" id="pfd-Ts-Hes"/>
                                         </connections>
                                     </tableViewCell>
@@ -469,7 +486,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JIM-e0-xGZ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1390" y="-242"/>
+            <point key="canvasLocation" x="2150" y="-44"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zKx-6b-DXE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="hpF-AD-XTD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SkH-tS-Ain">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vcp-fM-E5E" kind="relationship" relationship="rootViewController" id="JC4-xI-Uew"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="teL-FW-mKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-44" y="-242.36453201970446"/>
         </scene>
     </scenes>
     <resources>
@@ -479,4 +513,8 @@
         <image name="startup" width="128" height="128"/>
         <image name="travel" width="128" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="e6I-gT-f0t"/>
+        <segue reference="zgK-ZX-KCY"/>
+    </inferredMetricsTieBreakers>
 </document>

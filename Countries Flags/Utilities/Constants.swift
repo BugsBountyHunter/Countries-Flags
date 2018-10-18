@@ -19,6 +19,11 @@ let LOGIN_VC = "loginVC"
 let CREATE_ACCOUNT_VC = "createAccountVC"
 let HOME_VC = "homeVC"
 
+//segue Identifire
+let FROM_REGISTER_HOME_VC = "toHomeVC"
+let FROM_LOGIN_TO_CREATEACCOUNT_VC = "toCreateAccountVC"
+let FROM_LOGIN_TO_HOME_VC = "logintoHomeVC"
+let BACK_TO_LOGIN = "backToLogin"
 //Completion Handler
 
 typealias firebaseHandler = (_ status:Bool ,_ error:Error?)->()

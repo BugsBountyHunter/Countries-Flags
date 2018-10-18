@@ -22,10 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
         let homeVC = sb.instantiateViewController(withIdentifier: HOME_VC)
-        window?.makeKeyAndVisible()
-        // solve (Unbalanced calls to begin/end appearance transitions ) animated : false 
-        window?.rootViewController?.present(homeVC, animated: false, completion: nil)
-            
+        let navHomeVC = UINavigationController(rootViewController: homeVC)
+        navHomeVC.navigationBar.isHidden = true
+        window?.rootViewController = navHomeVC
+ 
         }
         return true
     }

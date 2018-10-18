@@ -34,12 +34,11 @@ class LoginVC: UIViewController {
         guard let email = emailTxtfield.text?.trimmingCharacters(in: .whitespacesAndNewlines)  else{return}
         guard let pass = passwordTxtfield.text else{return}
         
-        if email != "" && pass != "" {
+        if !email.isEmpty && !pass.isEmpty {
             AuthService.instanc.loginUser(withEmail: email, andPassword: pass) { (status, error) in
                 if status {
-                    guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: HOME_VC) as? HomeVC else{return}
                     self.loginBtn.stopAnimation(animationStyle: .expand, revertAfterDelay: 1.0, completion: nil)
-                    self.present(homeVC, animated: true, completion: nil)
+                    self.performSegue(withIdentifier: FROM_LOGIN_TO_HOME_VC, sender: self)
                 }else{
                     self.loginBtn.stopAnimation(animationStyle: .shake, revertAfterDelay: 0.1, completion: nil)
                     self.showAlert(title: "Login Error Message", message:  (error?.localizedDescription)!, okTitle: "ok", completion: nil)
@@ -47,22 +46,19 @@ class LoginVC: UIViewController {
                 }//if
             }
         }else{
-            if email == "" {
+            if email.isEmpty {
                 self.showAlert(title: "Login Error Message", message: "Please write correct email ", okTitle: "ok", completion: nil)
                 self.loginBtn.stopAnimation(animationStyle: .shake, revertAfterDelay: 0.1, completion: nil)
-            }else if pass == "" {
+            }else if pass.isEmpty {
                   self.showAlert(title: "Login Error Message", message: "Please write correct password ", okTitle: "ok", completion: nil)
                 self.loginBtn.stopAnimation(animationStyle: .shake, revertAfterDelay: 0.1, completion: nil)
             }
         }//if 
         
     }
-    @IBAction func signInBtnWasPressed(_ sender: Any) {
+    @IBAction func signUpBtnWasPressed(_ sender: Any) {
         //go to create new account page
-        guard let createAccountVC = storyboard?.instantiateViewController(withIdentifier: CREATE_ACCOUNT_VC) as? CreateAccountVC else {
-            return
-        }
-        present(createAccountVC, animated: true, completion: nil)
+      performSegue(withIdentifier: FROM_LOGIN_TO_CREATEACCOUNT_VC , sender: self)
     }
     
 }

@@ -15,15 +15,18 @@ class CountriesCell: UITableViewCell {
     @IBOutlet weak var capitalLbl: UILabel!
     @IBOutlet weak var timeZone: UILabel!
     @IBOutlet weak var flagImage: UIImageView!
-
-    func configureCell(country:Country , indexPath:IndexPath){
+    @IBOutlet weak var regionName: UILabel!
+    
+    func configureCell(country:Country){
         countryNameLbl.text = country.countryName
         capitalLbl.text = country.capitalName
         timeZone.text = country.timeZone
+        regionName.text = country.region
         
         //Download flag image cache it by kingfisher
-        let url = URL(string: country.imageUrl)!
-        let image = ImageResource(downloadURL: url, cacheKey: "\(indexPath.row)")
+        let url = URL(string: country.imageUrl!)!
+//        let image = ImageResource(downloadURL: url, cacheKey: country.imageUrl)
+        let image = ImageResource(downloadURL: url)
         flagImage.kf.setImage(with: image)
         
         //Another way to download image and view it in imageView

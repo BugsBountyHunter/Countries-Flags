@@ -7,11 +7,28 @@
 //
 
 import Foundation
-
+import Gloss
 struct Country {
-    public private(set) var countryName:String!
-    public private(set) var capitalName:String!
-    public private(set) var timeZone:String!
-    public private(set) var imageUrl:String!
+        let countryName:String?
+        let capitalName:String?
+        let timeZone:String?
+        let imageUrl:String?
+        let region :String?
+    
+    init?(json: JSON) {
+        
+        //get countrycode to add to URl
+        guard let countryCode:String = "alpha2Code" <~~ json else{return nil }
+        let countryLowrcase = countryCode.lowercased()
+        //get timeZone
+        guard  let time:[String] = "timezones" <~~ json  else {return nil}
+        let timeZone:String = time[0]
 
+        self.countryName = "name" <~~ json
+        self.capitalName = "capital" <~~ json
+        self.timeZone = "\(timeZone)"
+        self.imageUrl = "https://www.countryflags.io/\(countryLowrcase)/shiny/64.png"
+        self.region = "region" <~~ json
+    }
 }
+

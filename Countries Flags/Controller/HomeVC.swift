@@ -8,10 +8,14 @@
 
 import UIKit
 import Firebase
+
 class HomeVC: UIViewController {
     //Outlets
     @IBOutlet weak var tabelView: UITableView!
     @IBOutlet weak var userLbl: UILabel!
+    
+    //Variable
+    var countryArray = [Country]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,16 +23,17 @@ class HomeVC: UIViewController {
         tabelView.dataSource = self
         tabelView.delegate = self
         
-        //when get al data from Api just viewDidLoad Runing
-        DataService.instanc.getCcountriesData(withApiurl: API_URL) { (status, error) in
-            if status{
-                self.tabelView.reloadData()
-            }else{
-                self.showAlert(title: "Error", message: "\(String(describing: error?.localizedDescription))", okTitle: "ok", completion: nil)
+        //give respons to model to parsing by Glossy framwork
+        DataService.instanc.getCountriesData(api: API_URL) { (json) in
+            for oneJson in json{
+            guard let  Countries = Country.init(json: oneJson) else{return}
+            self.countryArray.append(Countries)
             }
+            self.tabelView.reloadData()
         }
-        userLbl.text = "Welcome \((Auth.auth().currentUser?.email)!)" 
-    
+        
+        userLbl.text = "Welcome \((Auth.auth().currentUser?.email)!)"
+
     }
     
     //Action
@@ -53,14 +58,14 @@ extension HomeVC:UITableViewDelegate,UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataService.instanc.countryArray.count
+        return countryArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: COUNTRY_CELL, for: indexPath) as? CountriesCell else{
             return UITableViewCell()
         }
-        let oneElement = DataService.instanc.countryArray[indexPath.row]
-        cell.configureCell(country: oneElement, indexPath: indexPath)
+        let oneElement = countryArray[indexPath.row]
+        cell.configureCell(country: oneElement)
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

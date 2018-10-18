@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DA7A3589B0F27551FC60EB303DF2D961"
+               BlueprintIdentifier = "76B7266DF7DB56A8DA494029B4448652"
                BuildableName = "TransitionButton.framework"
                BlueprintName = "TransitionButton"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DA7A3589B0F27551FC60EB303DF2D961"
+            BlueprintIdentifier = "76B7266DF7DB56A8DA494029B4448652"
             BuildableName = "TransitionButton.framework"
             BlueprintName = "TransitionButton"
             ReferencedContainer = "container:Pods.xcodeproj">

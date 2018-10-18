@@ -36,19 +36,18 @@ class CreateAccountVC: UIViewController {
         guard let pass = passwordTxtfield.text else{return}
         guard let confirmPass = confirmPassTxtfield.text else{return}
         
-        if  email != "" && pass == confirmPass{
+        if  !email.isEmpty && pass == confirmPass{
             AuthService.instanc.registerUser(withEmail: email, andPassword: pass) { (status , error ) in
                 if status {
-                    guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: HOME_VC) as? HomeVC else{return}
                     self.createAccountBtn.stopAnimation(animationStyle: .expand, revertAfterDelay: 1.0, completion: nil)
-                    self.present(homeVC, animated: true, completion: nil)
+                    self.performSegue(withIdentifier: FROM_REGISTER_HOME_VC, sender: self)
                 }else{
                     self.createAccountBtn.stopAnimation(animationStyle: .shake, revertAfterDelay: 0.1, completion: nil)
                     self.showAlert(title: " Register Error Message ", message:  (error?.localizedDescription)!, okTitle: "ok", completion: nil)
                 }//if
             }
         }else{
-            if email == "" {
+            if email.isEmpty {
                 self.showAlert(title: "Register Error Message", message: "Please Fill all Data ", okTitle: "ok", completion: nil)
                 self.createAccountBtn.stopAnimation(animationStyle: .shake, revertAfterDelay: 0.1, completion: nil)
             }else if pass != confirmPass {
@@ -61,7 +60,7 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func backBtnWasPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+       performSegue(withIdentifier: BACK_TO_LOGIN, sender: self)
     }
     
 
