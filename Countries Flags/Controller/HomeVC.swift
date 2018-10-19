@@ -8,14 +8,19 @@
 
 import UIKit
 import Firebase
-
+import TransitionButton
 class HomeVC: UIViewController {
     //Outlets
     @IBOutlet weak var tabelView: UITableView!
     @IBOutlet weak var userLbl: UILabel!
+    @IBOutlet weak var errorView: GradientView!
+    @IBOutlet weak var errorLbl: UILabel!
+    @IBOutlet weak var tryAgianBtn: TransitionButton!
     
     //Variable
     var countryArray = [Country]()
+    
+    let reachabilty = Reachability()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +28,90 @@ class HomeVC: UIViewController {
         tabelView.dataSource = self
         tabelView.delegate = self
         
-        //give respons to model to parsing by Glossy framwork
-        DataService.instanc.getCountriesData(api: API_URL) { (json) in
-            for oneJson in json{
-            guard let  Countries = Country.init(json: oneJson) else{return}
-            self.countryArray.append(Countries)
+        //Internet Detection
+        reachabilty?.whenReachable = {_ in
+            DispatchQueue.main.async {
+                self.getData()
+                self.tabelView.isHidden = false
+                self.errorLbl.isHidden = true
+                self.errorView.isHidden = true
+                
             }
-            self.tabelView.reloadData()
+        }
+        reachabilty?.whenUnreachable = {_ in
+            DispatchQueue.main.async {
+                self.countryArray = []
+                self.tabelView.reloadData()
+                self.tabelView.isHidden = true
+                self.errorView.isHidden = false
+                self.errorLbl.isHidden = false
+          
+            }
         }
         
-        userLbl.text = "Welcome \((Auth.auth().currentUser?.email)!)"
+        // Recive  internet notifiction status
+        NotificationCenter.default.addObserver(self, selector: #selector(internetChanged(notifi:)), name:Notification.Name.reachabilityChanged , object: reachabilty)
+        // startNotification
+        do{
+            try reachabilty?.startNotifier()
+        }catch{
+            showAlert(title: " Internet Error ", message: "Can't detected internet Connection ", okTitle: "ok", completion: nil)
+        }
+        
+    }
+    
+    //Function
+    //handle internet Notification
+    @objc func internetChanged(notifi:Notification){
+        let reachabilty = notifi.object as! Reachability
+        if reachabilty.connection != .none{
+            // check connction if wifi or data
+        if reachabilty.connection == .cellular{
+                    DispatchQueue.main.async {
+                        self.tabelView.isHidden = false
+                        self.errorLbl.isHidden = true
+                        self.errorView.isHidden = true
+                       }
+                 }else{
+                    DispatchQueue.main.async {
+                        self.tabelView.isHidden = false
+                        self.errorLbl.isHidden = true
+                        self.errorView.isHidden = true
+                    }
+                }//if reachabilty.connection == .cellular
+          }else{
+            DispatchQueue.main.async {
+                self.tabelView.isHidden = true
+                self.errorView.isHidden = false
+                self.errorLbl.isHidden = false
+            }
+        }//if
+    }
+    
+    //This function help to get data from api
+    func getData(){
+        DataService.instanc.getCountriesData(api: API_URL) { [unowned self ] (countries, error) in
+            if error != nil {
+                self.errorView.isHidden = false
+                self.errorLbl.isHidden = false
+                self.tryAgianBtn.isHidden = false
+                self.showAlert(title: "Internet connection Error ", message:(error?.localizedDescription)!, okTitle: "ok", completion: nil)
+            }else{
+                //handle respons if have data or not  ..
+                if countries!.count > 0 {
+                    self.countryArray = countries!
+                    self.tabelView.reloadData()
+                }else{
+                    self.tabelView.isHidden = true
+                    self.errorView.isHidden = false
+                    self.errorLbl.isHidden = false
+                    self.tryAgianBtn.isHidden = false
+                }//if
+                
+            }//if
+            
+        }//closure
+
 
     }
     
