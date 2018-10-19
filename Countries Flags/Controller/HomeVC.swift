@@ -15,7 +15,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var userLbl: UILabel!
     @IBOutlet weak var errorView: GradientView!
     @IBOutlet weak var errorLbl: UILabel!
-    @IBOutlet weak var tryAgianBtn: TransitionButton!
+   
     
     //Variable
     var countryArray = [Country]()
@@ -29,23 +29,19 @@ class HomeVC: UIViewController {
         tabelView.delegate = self
         
         //Internet Detection
-        reachabilty?.whenReachable = {_ in
+        reachabilty?.whenReachable = {[weak self] _ in
+            guard let self = self else{return}
             DispatchQueue.main.async {
                 self.getData()
-                self.tabelView.isHidden = false
-                self.errorLbl.isHidden = true
-                self.errorView.isHidden = true
-                
+                self.hideViewError()
             }
         }
-        reachabilty?.whenUnreachable = {_ in
+        reachabilty?.whenUnreachable = { [weak self] _ in
+            guard let self = self else{return}
             DispatchQueue.main.async {
                 self.countryArray = []
                 self.tabelView.reloadData()
-                self.tabelView.isHidden = true
-                self.errorView.isHidden = false
-                self.errorLbl.isHidden = false
-          
+                self.showViewError()
             }
         }
         
@@ -68,33 +64,37 @@ class HomeVC: UIViewController {
             // check connction if wifi or data
         if reachabilty.connection == .cellular{
                     DispatchQueue.main.async {
-                        self.tabelView.isHidden = false
-                        self.errorLbl.isHidden = true
-                        self.errorView.isHidden = true
+                      self.hideViewError()
                        }
                  }else{
                     DispatchQueue.main.async {
-                        self.tabelView.isHidden = false
-                        self.errorLbl.isHidden = true
-                        self.errorView.isHidden = true
+                      self.hideViewError()
                     }
                 }//if reachabilty.connection == .cellular
           }else{
             DispatchQueue.main.async {
-                self.tabelView.isHidden = true
-                self.errorView.isHidden = false
-                self.errorLbl.isHidden = false
+                   self.showViewError()
             }
         }//if
+    }
+    //two function hide or show view error
+    func hideViewError(){
+        self.tabelView.isHidden = false
+        self.errorLbl.isHidden = true
+        self.errorView.isHidden = true
+    }
+    func showViewError(){
+        self.tabelView.isHidden = true
+        self.errorView.isHidden = false
+        self.errorLbl.isHidden = false
     }
     
     //This function help to get data from api
     func getData(){
-        DataService.instanc.getCountriesData(api: API_URL) { [unowned self ] (countries, error) in
+        DataService.instanc.getCountriesData(api: API_URL) { [weak self ] (countries, error) in
+            guard let self = self else{return}
             if error != nil {
-                self.errorView.isHidden = false
-                self.errorLbl.isHidden = false
-                self.tryAgianBtn.isHidden = false
+                self.showViewError()
                 self.showAlert(title: "Internet connection Error ", message:(error?.localizedDescription)!, okTitle: "ok", completion: nil)
             }else{
                 //handle respons if have data or not  ..
@@ -102,10 +102,7 @@ class HomeVC: UIViewController {
                     self.countryArray = countries!
                     self.tabelView.reloadData()
                 }else{
-                    self.tabelView.isHidden = true
-                    self.errorView.isHidden = false
-                    self.errorLbl.isHidden = false
-                    self.tryAgianBtn.isHidden = false
+                   self.hideViewError()
                 }//if
                 
             }//if
